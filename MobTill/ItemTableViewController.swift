@@ -6,15 +6,34 @@
 //  Copyright © 2016 iProperty. All rights reserved.
 //
 
+import Alamofire
 import UIKit
+import SwiftyJSON
+
 
 class ItemTableViewController: UITableViewController {
 
     var items = [Item]()
+    var arrRes = [[String:AnyObject]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadItem()
+
+        // Request list of product
+        Alamofire.request(.GET, "http://gocerebro.com/ahkl/mobytill/dbquery.php?TABLENAME=Product&FIELDS=ProductID,Name,Price,ImageURL").responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                
+                if let resData = swiftyJsonVar.arrayObject {
+                    self.arrRes = resData as! [[String:AnyObject]]
+                }
+                if self.arrRes.count > 0 {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,18 +44,16 @@ class ItemTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return items.count
+        return arrRes.count
     }
 
     func loadItem(){
         let itemImage = UIImage(named: "item1")
-        let firstItem = Item(name: "Sample Item", photo: itemImage, price: "85")!
+        let firstItem = Item(name: "Sample Item", photo: itemImage, price: "RM 85")!
         
         items += [firstItem, firstItem, firstItem]
     }
@@ -46,65 +63,29 @@ class ItemTableViewController: UITableViewController {
         let cellIdentifier = "ItemTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ItemTableViewCell
         
-        let item: Item
+//        let item: Item
 //        if searchController.active && searchController.searchBar.text != "" {
 //            item = filteredMeals[indexPath.row]
 //        } else {
 //            item = items[indexPath.row]
 //        }
-        item = items[indexPath.row]
+//        item = items[indexPath.row]
         
-        cell.itemName?.text = item.name
-        cell.itemImage?.image = item.photo
-        cell.itemPrice?.text = item.price
+        var dict = arrRes[indexPath.row]
         
+        let nameOfItem = dict["Name"] as? String
+        if (nameOfItem == "") {
+            cell.itemName?.text = "Bicycle"
+        } else {
+            cell.itemName?.text = nameOfItem
+        }
+        cell.itemImage?.image = UIImage(named: "item1")
+        let price = dict["Price"] as! String
+        if (price == "") {
+            cell.itemPrice?.text = "RM 80"
+        } else {
+            cell.itemPrice?.text = "RM \(price)"
+        }
         return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

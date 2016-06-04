@@ -10,13 +10,19 @@ import UIKit
 
 class ItemDetailsViewController: UIViewController {
 
+    @IBOutlet weak var itemImage: UIImageView!
+    @IBOutlet weak var itemName: UILabel!
+    @IBOutlet weak var itemPrice: UILabel!
+    @IBOutlet weak var itemDescription: UITextView!
+    @IBOutlet weak var quantityTextField: UITextField!
+    
     @IBAction func addToCart(sender: AnyObject) {
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        itemImage.image = UIImage(named: "item1")
         // Do any additional setup after loading the view.
     }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F8DC4681D029FD1004600FF /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DC4671D029FD1004600FF /* ItemDetailsViewController.swift */; };
+		3F5CB593418C83E3D51B9EF1 /* Pods_MobTill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F020BF55215A4D0D830A4A /* Pods_MobTill.framework */; };
 		848650481D028FEF003D8F44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848650471D028FEF003D8F44 /* AppDelegate.swift */; };
 		8486504A1D028FEF003D8F44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848650491D028FEF003D8F44 /* ViewController.swift */; };
 		8486504D1D028FEF003D8F44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486504B1D028FEF003D8F44 /* Main.storyboard */; };
@@ -18,6 +19,10 @@
 		8486506A1D029BC6003D8F44 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848650691D029BC6003D8F44 /* Item.swift */; };
 		8486506C1D029E75003D8F44 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486506B1D029E75003D8F44 /* ItemTableViewCell.swift */; };
 		84A2D8EC1D02DB4E00D4D047 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D8EB1D02DB4E00D4D047 /* CheckoutViewController.swift */; };
+		84A2D8EE1D02ECCE00D4D047 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A2D8ED1D02ECCE00D4D047 /* Alamofire.framework */; };
+		84A2D8F01D02F92400D4D047 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D8EF1D02F92300D4D047 /* QRCodeViewController.swift */; };
+		84A2D8F21D03242000D4D047 /* CheckoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D8F11D03242000D4D047 /* CheckoutTableViewCell.swift */; };
+		84A2D8F41D0329A000D4D047 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A2D8F31D0329A000D4D047 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		1F8DC4671D029FD1004600FF /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
+		2AD5A675A53771A34F35257E /* Pods-MobTill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobTill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobTill/Pods-MobTill.debug.xcconfig"; sourceTree = "<group>"; };
 		848650441D028FEF003D8F44 /* MobTill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobTill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848650471D028FEF003D8F44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848650491D028FEF003D8F44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +52,12 @@
 		848650691D029BC6003D8F44 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		8486506B1D029E75003D8F44 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		84A2D8EB1D02DB4E00D4D047 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		84A2D8ED1D02ECCE00D4D047 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/MobTill-fqcguntwjduvwoaoolupktteequq/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
+		84A2D8EF1D02F92300D4D047 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		84A2D8F11D03242000D4D047 /* CheckoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewCell.swift; sourceTree = "<group>"; };
+		84A2D8F31D0329A000D4D047 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/MobTill-fqcguntwjduvwoaoolupktteequq/Build/Products/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		D5F020BF55215A4D0D830A4A /* Pods_MobTill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobTill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCB7DDB729BD17ADDE0FEA39 /* Pods-MobTill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobTill.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobTill/Pods-MobTill.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A2D8F41D0329A000D4D047 /* SwiftyJSON.framework in Frameworks */,
+				84A2D8EE1D02ECCE00D4D047 /* Alamofire.framework in Frameworks */,
+				3F5CB593418C83E3D51B9EF1 /* Pods_MobTill.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64106BD2C50606292988CB0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AD5A675A53771A34F35257E /* Pods-MobTill.debug.xcconfig */,
+				DCB7DDB729BD17ADDE0FEA39 /* Pods-MobTill.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8486503B1D028FEE003D8F44 = {
 			isa = PBXGroup;
 			children = (
 				848650461D028FEF003D8F44 /* MobTill */,
 				8486505B1D028FEF003D8F44 /* MobTillTests */,
 				848650451D028FEF003D8F44 /* Products */,
+				64106BD2C50606292988CB0D /* Pods */,
+				F992A764F379FBBF6AC7D45E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +124,8 @@
 				848650691D029BC6003D8F44 /* Item.swift */,
 				8486506B1D029E75003D8F44 /* ItemTableViewCell.swift */,
 				84A2D8EB1D02DB4E00D4D047 /* CheckoutViewController.swift */,
+				84A2D8EF1D02F92300D4D047 /* QRCodeViewController.swift */,
+				84A2D8F11D03242000D4D047 /* CheckoutTableViewCell.swift */,
 			);
 			path = MobTill;
 			sourceTree = "<group>";
@@ -111,6 +139,16 @@
 			path = MobTillTests;
 			sourceTree = "<group>";
 		};
+		F992A764F379FBBF6AC7D45E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84A2D8F31D0329A000D4D047 /* SwiftyJSON.framework */,
+				84A2D8ED1D02ECCE00D4D047 /* Alamofire.framework */,
+				D5F020BF55215A4D0D830A4A /* Pods_MobTill.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 848650611D028FEF003D8F44 /* Build configuration list for PBXNativeTarget "MobTill" */;
 			buildPhases = (
+				C713F00055E3FE4A4C351F4E /* Check Pods Manifest.lock */,
 				848650401D028FEF003D8F44 /* Sources */,
 				848650411D028FEF003D8F44 /* Frameworks */,
 				848650421D028FEF003D8F44 /* Resources */,
+				2A46BAA9F6110FF6C11308E0 /* Embed Pods Frameworks */,
+				B46343E36A5EFA5E536D768D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,13 +248,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A46BAA9F6110FF6C11308E0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobTill/Pods-MobTill-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B46343E36A5EFA5E536D768D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobTill/Pods-MobTill-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C713F00055E3FE4A4C351F4E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		848650401D028FEF003D8F44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A2D8F21D03242000D4D047 /* CheckoutTableViewCell.swift in Sources */,
 				8486506A1D029BC6003D8F44 /* Item.swift in Sources */,
 				8486504A1D028FEF003D8F44 /* ViewController.swift in Sources */,
+				84A2D8F01D02F92400D4D047 /* QRCodeViewController.swift in Sources */,
 				8486506C1D029E75003D8F44 /* ItemTableViewCell.swift in Sources */,
 				848650681D02959F003D8F44 /* ItemTableViewController.swift in Sources */,
 				848650481D028FEF003D8F44 /* AppDelegate.swift in Sources */,
@@ -345,6 +436,7 @@
 		};
 		848650621D028FEF003D8F44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AD5A675A53771A34F35257E /* Pods-MobTill.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MobTill/Info.plist;
@@ -357,6 +449,7 @@
 		};
 		848650631D028FEF003D8F44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCB7DDB729BD17ADDE0FEA39 /* Pods-MobTill.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MobTill/Info.plist;

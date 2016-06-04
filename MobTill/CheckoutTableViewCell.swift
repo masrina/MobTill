@@ -1,5 +1,5 @@
 //
-//  ItemTableViewCell.swift
+//  CheckoutTableViewCell.swift
 //  MobTill
 //
 //  Created by Masrina on 04/06/2016.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ItemTableViewCell: UITableViewCell {
+class CheckoutTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var itemImage: UIImageView!
-    @IBOutlet weak var itemName: UILabel!
-    @IBOutlet weak var itemPrice: UILabel!
-    var itemId: NSString = ""
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var originalPrice: UILabel!
+    @IBOutlet weak var totalQuantity: UILabel!
+    @IBOutlet weak var totalPrice: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,11 +25,6 @@ class ItemTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    override func layoutSubviews() {
-//        itemImage.layer.cornerRadius = itemImage.frame.size.width/2
-        itemImage.clipsToBounds = true
     }
 
 }
