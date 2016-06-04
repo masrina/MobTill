@@ -36,20 +36,31 @@ class ItemTableViewController: UITableViewController {
 
     func loadItem(){
         let itemImage = UIImage(named: "item1")
-        let firstItem = Item(name: "Sample Item", photo: itemImage)!
+        let firstItem = Item(name: "Sample Item", photo: itemImage, price: "85")!
         
-        items += [firstItem]
+        items += [firstItem, firstItem, firstItem]
     }
     
-    /*
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cellIdentifier = "ItemTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ItemTableViewCell
+        
+        let item: Item
+//        if searchController.active && searchController.searchBar.text != "" {
+//            item = filteredMeals[indexPath.row]
+//        } else {
+//            item = items[indexPath.row]
+//        }
+        item = items[indexPath.row]
+        
+        cell.itemName?.text = item.name
+        cell.itemImage?.image = item.photo
+        cell.itemPrice?.text = item.price
+        
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

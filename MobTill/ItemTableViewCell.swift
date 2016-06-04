@@ -26,9 +26,9 @@ class ItemTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    override func layoutSubviews() {
-        itemImage.layer.cornerRadius = itemImage.frame.size.width/2
-        itemImage.clipsToBounds = true
-    }
+//    override func layoutSubviews() {
+//        itemImage.layer.cornerRadius = itemImage.frame.size.width/2
+//        itemImage.clipsToBounds = true
+//    }
 
 }
