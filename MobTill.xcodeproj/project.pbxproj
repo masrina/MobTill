@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F8DC4681D029FD1004600FF /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DC4671D029FD1004600FF /* ItemDetailsViewController.swift */; };
 		848650481D028FEF003D8F44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848650471D028FEF003D8F44 /* AppDelegate.swift */; };
 		8486504A1D028FEF003D8F44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848650491D028FEF003D8F44 /* ViewController.swift */; };
 		8486504D1D028FEF003D8F44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486504B1D028FEF003D8F44 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F8DC4671D029FD1004600FF /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		848650441D028FEF003D8F44 /* MobTill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobTill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848650471D028FEF003D8F44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848650491D028FEF003D8F44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				8486504E1D028FEF003D8F44 /* Assets.xcassets */,
 				848650501D028FEF003D8F44 /* LaunchScreen.storyboard */,
 				848650531D028FEF003D8F44 /* Info.plist */,
+				1F8DC4671D029FD1004600FF /* ItemDetailsViewController.swift */,
 			);
 			path = MobTill;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			files = (
 				8486504A1D028FEF003D8F44 /* ViewController.swift in Sources */,
 				848650481D028FEF003D8F44 /* AppDelegate.swift in Sources */,
+				1F8DC4681D029FD1004600FF /* ItemDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +392,7 @@
 				848650631D028FEF003D8F44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		848650641D028FEF003D8F44 /* Build configuration list for PBXNativeTarget "MobTillTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +401,7 @@
 				848650661D028FEF003D8F44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
