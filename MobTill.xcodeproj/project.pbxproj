@@ -17,6 +17,7 @@
 		848650681D02959F003D8F44 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848650671D02959F003D8F44 /* ItemTableViewController.swift */; };
 		8486506A1D029BC6003D8F44 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848650691D029BC6003D8F44 /* Item.swift */; };
 		8486506C1D029E75003D8F44 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486506B1D029E75003D8F44 /* ItemTableViewCell.swift */; };
+		84A2D8EC1D02DB4E00D4D047 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D8EB1D02DB4E00D4D047 /* CheckoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		848650671D02959F003D8F44 /* ItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 		848650691D029BC6003D8F44 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		8486506B1D029E75003D8F44 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		84A2D8EB1D02DB4E00D4D047 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				848650671D02959F003D8F44 /* ItemTableViewController.swift */,
 				848650691D029BC6003D8F44 /* Item.swift */,
 				8486506B1D029E75003D8F44 /* ItemTableViewCell.swift */,
+				84A2D8EB1D02DB4E00D4D047 /* CheckoutViewController.swift */,
 			);
 			path = MobTill;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				848650681D02959F003D8F44 /* ItemTableViewController.swift in Sources */,
 				848650481D028FEF003D8F44 /* AppDelegate.swift in Sources */,
 				1F8DC4681D029FD1004600FF /* ItemDetailsViewController.swift in Sources */,
+				84A2D8EC1D02DB4E00D4D047 /* CheckoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

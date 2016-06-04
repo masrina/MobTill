@@ -1,19 +1,15 @@
 //
-//  ItemDetailsViewController.swift
+//  CheckoutViewController.swift
 //  MobTill
 //
-//  Created by Ainor Syahrizal on 04/06/2016.
+//  Created by Masrina on 04/06/2016.
 //  Copyright © 2016 iProperty. All rights reserved.
 //
 
 import UIKit
 
-class ItemDetailsViewController: UIViewController {
+class CheckoutViewController: UIViewController {
 
-    @IBAction func addToCart(sender: AnyObject) {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
