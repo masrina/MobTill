@@ -8,10 +8,16 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class CheckoutViewController: UIViewController, UITableViewDataSource {
     
     var shareURL: NSString!
+    var lists: Results<SelectedItems>!
+    let uiRealm = try! Realm()
+    
+    @IBOutlet weak var checkoutTableView: UITableView!
+    
     @IBAction func shareLink(sender: AnyObject) {
         let activityViewController = UIActivityViewController(activityItems: [self.shareURL as NSString], applicationActivities: nil)
         presentViewController(activityViewController, animated: true, completion: {})
@@ -32,6 +38,7 @@ class CheckoutViewController: UIViewController, UITableViewDataSource {
                     print("Error: \(error)")
                 }
         }
+        retrieveData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,8 +46,15 @@ class CheckoutViewController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
+    func retrieveData() {
+        
+        lists = uiRealm.objects(SelectedItems)
+        self.checkoutTableView.setEditing(false, animated: true)
+        self.checkoutTableView.reloadData()
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return lists.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -50,7 +64,14 @@ class CheckoutViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "CheckOutCellId"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CheckoutTableViewCell
+        
+        let cell = checkoutTableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CheckoutTableViewCell
+        let list = lists[indexPath.row]
+        
+        cell.productName.text = list.itemName
+        cell.productImage.image = UIImage(named: "item1")
+        cell.totalQuantity.text = list.quantity
+        cell.totalPrice.text = list.totalPrice
         
 //        let item: Item
 //        item = items[indexPath.row]

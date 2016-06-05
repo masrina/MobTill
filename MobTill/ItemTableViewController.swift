@@ -18,8 +18,7 @@ class ItemTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadItem()
-
+        
         // Request list of product
         Alamofire.request(.GET, "http://gocerebro.com/ahkl/mobytill/dbquery.php?TABLENAME=Product&FIELDS=ProductID,Name,Price,ImageURL").responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
@@ -28,12 +27,12 @@ class ItemTableViewController: UITableViewController {
                 if let resData = swiftyJsonVar.arrayObject {
                     self.arrRes = resData as! [[String:AnyObject]]
                 }
+                self.loadItem()
                 if self.arrRes.count > 0 {
                     self.tableView.reloadData()
                 }
             }
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,10 +51,25 @@ class ItemTableViewController: UITableViewController {
     }
 
     func loadItem(){
-        let itemImage = UIImage(named: "item1")
-        let firstItem = Item(name: "Sample Item", photo: itemImage, price: "RM 85")!
         
-        items += [firstItem, firstItem, firstItem]
+        for i in 0..<arrRes.count {
+            var dict = arrRes[i]
+            var nameOfItem = dict["Name"] as? String
+            if (nameOfItem == "") {
+                nameOfItem = "Bicycle"
+            }
+            
+            let jsonPrice = dict["Price"] as! String
+            var price = jsonPrice
+            if (jsonPrice == "") {
+                price = "80"
+            }
+            let itemImage = UIImage(named: "item1")
+            let firstItem = Item(name: nameOfItem!, photo: itemImage, price: price)!
+            
+            items.append(firstItem)
+        }
+        
     }
     
 
@@ -63,29 +77,33 @@ class ItemTableViewController: UITableViewController {
         let cellIdentifier = "ItemTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ItemTableViewCell
         
-//        let item: Item
+        let item: Item
 //        if searchController.active && searchController.searchBar.text != "" {
 //            item = filteredMeals[indexPath.row]
 //        } else {
 //            item = items[indexPath.row]
 //        }
-//        item = items[indexPath.row]
+        item = items[indexPath.row]
         
-        var dict = arrRes[indexPath.row]
+        cell.itemName?.text = item.name
+        cell.itemPrice?.text = "RM \(item.price)"
+        cell.itemImage?.image = item.photo
         
-        let nameOfItem = dict["Name"] as? String
-        if (nameOfItem == "") {
-            cell.itemName?.text = "Bicycle"
-        } else {
-            cell.itemName?.text = nameOfItem
-        }
-        cell.itemImage?.image = UIImage(named: "item1")
-        let price = dict["Price"] as! String
-        if (price == "") {
-            cell.itemPrice?.text = "RM 80"
-        } else {
-            cell.itemPrice?.text = "RM \(price)"
-        }
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ItemDetails" {
+            let itemDetailViewController = segue.destinationViewController as! ItemDetailsViewController
+            if let selectedMealCell = sender as? ItemTableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedMealCell)!
+                let item : Item
+                item = items[indexPath.row]
+                itemDetailViewController.item = item
+            }
+        }
+        else if segue.identifier == "AddItem" {
+            print("Add a new meal")
+        }
     }
 }

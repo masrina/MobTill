@@ -7,6 +7,7 @@ use_frameworks!
 target 'MobTill' do
 	pod 'Alamofire', '~> 3.4'
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+    pod 'RealmSwift'
 end
 
 target 'MobTillTests' do
