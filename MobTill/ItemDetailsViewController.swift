@@ -18,6 +18,11 @@ class ItemDetailsViewController: UIViewController {
     @IBOutlet weak var itemDescription: UITextView!
     @IBOutlet weak var quantityTextField: UITextField!
     @IBOutlet weak var detailScrollView: UIScrollView!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var qrCodeButton: UIButton!
+    
+    
+    
     var shareURL: NSString!
     var item: Item?
     let uiRealm = try! Realm()
@@ -25,6 +30,12 @@ class ItemDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        qrCodeButton.layer.borderColor = UIColor.whiteColor().CGColor
+        qrCodeButton.layer.borderWidth = 1.0
+        shareButton.layer.borderColor = UIColor.whiteColor().CGColor
+        shareButton.layer.borderWidth = 1.0
+        qrCodeButton.backgroundColor = UIColor(red:0.20, green:0.60, blue:0.86, alpha:1.0)
+        shareButton.backgroundColor = UIColor(red:0.20, green:0.60, blue:0.86, alpha:1.0)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ItemDetailsViewController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ItemDetailsViewController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
         self.hideKeyboardWhenTappedAround()
@@ -32,7 +43,7 @@ class ItemDetailsViewController: UIViewController {
             itemImage.image = item.photo
             itemName.text = item.name
             itemPrice.text = "RM \(item.price)"
-            itemDescription.text = "An electrical cable is made of two or more wires running side by side and bonded, twisted, or braided together to form a single assembly, the ends of which can be connected to two devices, enabling the transfer of electrical signals from one device to the other."
+            itemDescription.text = "An electrical cable is made of two or more wires running side by side and bonded, twisted, or braided together to form a single assembly, the ends of which can sbe connected to two devices, enabling the transfer of electrical signals from one device to the other."
             itemDescription.font = UIFont(name: "Helvetica", size: 14)
         }
         

@@ -95,12 +95,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3So-Kf-0Gf">
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3So-Kf-0Gf">
                                 <rect key="frame" x="0.0" y="559" width="294" height="41"/>
-                                <state key="normal" title="Share Link"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="552" width="199" height="48"/>
-                                </variation>
+                                <state key="normal" title="Share Link">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="shareLink:" destination="FPj-hb-6Pr" eventType="touchUpInside" id="zFy-u2-fE5"/>
                                     <action selector="shareLinkSheet:" destination="VMh-lH-CyK" eventType="touchUpInside" id="HBq-Z9-olt"/>
@@ -110,9 +109,13 @@
                                 <rect key="frame" x="294" y="559" width="306" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="ZIK-lg-gBO"/>
-                                    <constraint firstAttribute="width" constant="201" id="vlX-NO-Vxc"/>
+                                    <constraint firstAttribute="width" constant="201" id="vlX-NO-Vxc">
+                                        <variation key="widthClass=compact" constant="188"/>
+                                    </constraint>
                                 </constraints>
-                                <state key="normal" title="Show QR Code"/>
+                                <state key="normal" title="Show QR Code">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="ZIK-lg-gBO"/>
@@ -398,7 +401,10 @@
                             <constraint firstItem="MxF-g2-Nr6" firstAttribute="top" secondItem="5nr-eD-pvo" secondAttribute="bottom" constant="8" id="Pyg-3C-qRG"/>
                             <constraint firstItem="GWB-dh-wCb" firstAttribute="top" secondItem="Rtt-f2-DVE" secondAttribute="bottom" id="RC1-rF-KzA"/>
                             <constraint firstAttribute="trailing" secondItem="GWB-dh-wCb" secondAttribute="trailing" id="RF9-1B-Yfl"/>
-                            <constraint firstItem="GWB-dh-wCb" firstAttribute="leading" secondItem="3So-Kf-0Gf" secondAttribute="trailing" id="V3n-i8-QlR"/>
+                            <constraint firstItem="3So-Kf-0Gf" firstAttribute="leading" secondItem="VTm-RR-aSJ" secondAttribute="leadingMargin" constant="-20" id="RMH-wc-4lx"/>
+                            <constraint firstItem="GWB-dh-wCb" firstAttribute="leading" secondItem="3So-Kf-0Gf" secondAttribute="trailing" id="V3n-i8-QlR">
+                                <variation key="widthClass=compact" constant="-1"/>
+                            </constraint>
                             <constraint firstItem="Rtt-f2-DVE" firstAttribute="top" secondItem="5nr-eD-pvo" secondAttribute="bottom" id="anx-YI-Z1h"/>
                             <constraint firstItem="GWB-dh-wCb" firstAttribute="baseline" secondItem="3So-Kf-0Gf" secondAttribute="firstBaseline" id="dkF-Ux-Wuj"/>
                         </constraints>
@@ -412,6 +418,7 @@
                                 <exclude reference="anx-YI-Z1h"/>
                                 <exclude reference="LlK-he-ff5"/>
                                 <exclude reference="Pyg-3C-qRG"/>
+                                <exclude reference="RMH-wc-4lx"/>
                                 <exclude reference="51G-Tv-fR0"/>
                                 <exclude reference="7Pw-5F-h6u"/>
                                 <exclude reference="C8J-QZ-kEc"/>
@@ -432,6 +439,7 @@
                                 <include reference="EFM-94-auH"/>
                                 <exclude reference="anx-YI-Z1h"/>
                                 <include reference="LlK-he-ff5"/>
+                                <include reference="RMH-wc-4lx"/>
                                 <include reference="51G-Tv-fR0"/>
                                 <include reference="7Pw-5F-h6u"/>
                                 <include reference="C8J-QZ-kEc"/>
@@ -439,7 +447,7 @@
                                 <include reference="RC1-rF-KzA"/>
                                 <include reference="RF9-1B-Yfl"/>
                                 <include reference="V3n-i8-QlR"/>
-                                <include reference="dkF-Ux-Wuj"/>
+                                <exclude reference="dkF-Ux-Wuj"/>
                             </mask>
                         </variation>
                     </view>
@@ -450,7 +458,9 @@
                         <outlet property="itemImage" destination="MxF-g2-Nr6" id="39z-kl-xup"/>
                         <outlet property="itemName" destination="doF-3h-wiT" id="32U-HA-M0C"/>
                         <outlet property="itemPrice" destination="kt2-gI-2C8" id="hjM-f6-KG7"/>
+                        <outlet property="qrCodeButton" destination="GWB-dh-wCb" id="ywm-ai-oRX"/>
                         <outlet property="quantityTextField" destination="NSC-lt-0H1" id="2rV-87-YGQ"/>
+                        <outlet property="shareButton" destination="3So-Kf-0Gf" id="qwe-dP-Yei"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3BS-cE-HcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
