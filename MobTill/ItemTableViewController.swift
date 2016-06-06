@@ -64,7 +64,7 @@ class ItemTableViewController: UITableViewController {
             if (jsonPrice == "") {
                 price = "80"
             }
-            let itemImage = UIImage(named: "item1")
+            let itemImage = UIImage(named: "Product2")
             let firstItem = Item(name: nameOfItem!, photo: itemImage, price: price)!
             
             items.append(firstItem)
